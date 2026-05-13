@@ -1,0 +1,62 @@
+name: "Add Content to Project Management Process Docs"
+description: "Request to add new content or updates to an existing program management process document."
+title: "[Process Doc Update]: Create README for OctoAcme Project Management Docs with links to all process documents and management summary"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update? (If this is a new document, select '')"
+      description: "Select the program management process document you want to add content to. If this is a new process doc, choose ''."
+      options:
+        - octoacme-project-management-overview.md
+        - octoacme-project-initiation.md
+        - octoacme-project-planning.md
+        - octoacme-execution-and-tracking.md
+        - octoacme-risks-and-communication.md
+        - octoacme-release-and-deployment.md
+        - octoacme-retrospective-and-continuous-improvement.md
+        - octoacme-roles-and-personas.md
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      description: "Briefly describe the new content or update you want to add."
+      placeholder: "E.g., Add clarification to risk escalation paths, new checklist for releases, additional role responsibilities, etc."
+      value: "Create a comprehensive README for the OctoAcme Project Management Docs that serves as a central index and entry point. The README should:\n\n1. Provide a brief overview of OctoAcme's project management approach and principles\n2. Link to all 8 process documents in the docs/ folder:\n   - octoacme-project-management-overview.md\n   - octoacme-project-initiation.md\n   - octoacme-project-planning.md\n   - octoacme-execution-and-tracking.md\n   - octoacme-risks-and-communication.md\n   - octoacme-release-and-deployment.md\n   - octoacme-retrospective-and-continuous-improvement.md\n   - octoacme-roles-and-personas.md\n3. Organize links by project lifecycle phase for easy navigation\n4. Include a quick reference to core roles and communication cadence"
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      description: "Explain the reason for this addition. Is it to address a gap, improve clarity, incorporate a best practice, etc.?"
+      placeholder: "E.g., Identified gap in process, team feedback, alignment with industry standards, etc."
+      value: "Current process documentation exists in separate files across the docs/ folder, but there is no single entry point or index. A README would:\n\n1. Improve discoverability - new team members can quickly find all process documents\n2. Provide context - brief overview of OctoAcme's approach before diving into specific docs\n3. Enable navigation - organize docs by lifecycle phase for logical progression\n4. Centralize knowledge - serve as the hub for institutional project management knowledge\n5. Support Copilot Spaces - enable grounding Copilot in the full context of OctoAcme processes"
+    validations:
+      required: true
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content (optional)"
+      description: "Paste the proposed new text, checklist, diagram, or example content you'd like to add. (Optional)"
+      placeholder: "E.g., - New checklist items, - Copy for a new section, - Example scenario, etc."
+      value: "# OctoAcme Project Management Documentation\n\n## Overview\nOctoAcme runs projects using a customer-first, iterative delivery approach with clear ownership, data-informed decisions, and psychological safety. This documentation hub provides guidance for all phases of project execution.\n\n## Quick Start\n- **New to OctoAcme?** Start with [Project Management Overview](./octoacme-project-management-overview.md)\n- **Starting a new project?** Follow the [Project Initiation Guide](./octoacme-project-initiation.md)\n- **Roles unclear?** See [OctoAcme Personas](./octoacme-roles-and-personas.md)\n\n## Project Lifecycle Phases\n\n### 1. Initiation\nValidate business need, identify stakeholders, and authorize work.\n- [Project Initiation Guide](./octoacme-project-initiation.md)\n\n### 2. Planning\nBreak work into shippable increments, identify dependencies and risks.\n- [Project Planning](./octoacme-project-planning.md)\n\n### 3. Execution & Tracking\nManage day-to-day execution, track progress, ensure quality.\n- [Execution & Tracking](./octoacme-execution-and-tracking.md)\n\n### 4. Risk Management & Communication\nIdentify, manage, and communicate risks and dependencies.\n- [Risk Management & Communication](./octoacme-risks-and-communication.md)\n\n### 5. Release & Deployment\nStandardize release processes to reduce risk and improve observability.\n- [Release & Deployment Guide](./octoacme-release-and-deployment.md)\n\n### 6. Close & Continuous Improvement\nCapture learnings and convert them into actionable improvements.\n- [Retrospective & Continuous Improvement](./octoacme-retrospective-and-continuous-improvement.md)\n\n## Supporting Documents\n\n### Roles & Personas\nUnderstand responsibilities and communication patterns for key roles.\n- [OctoAcme Personas](./octoacme-roles-and-personas.md) - Developers, Product Managers, Project Managers\n\n## Core Principles\n- **Customer-first**: Prioritize customer value and usability\n- **Iterative delivery**: Deliver small, testable increments\n- **Clear ownership**: Each project has a named PM and Product Lead\n- **Data-informed**: Measure impact and iterate based on evidence\n- **Psychological safety**: Encourage feedback and learning\n\n## Communication Cadence\n- **Daily**: Team standups (15 min)\n- **Weekly**: PM + PdM sync, delivery team syncs\n- **Bi-weekly/Sprint-based**: Planning and reviews\n- **Monthly**: Stakeholder updates\n- **Ad-hoc**: Escalations and incident response\n\n## Key Artifacts\n- Project Charter / One-pager\n- Roadmap and Release Plan\n- Sprint/Iteration Backlog\n- Risk Register\n- Retrospective notes and action items\n\n## Issue Templates\nUse [Add Content to Project Management Process Docs](./.github/ISSUE_TEMPLATE/add-update-content-to-process-docs.yml) template to propose updates to this documentation."
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Check all that apply:"
+      options:
+        - label: "Content aligns with existing process docs"
+          checked: true
+        - label: "Update improves clarity or closes a documented gap"
+          checked: true
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
